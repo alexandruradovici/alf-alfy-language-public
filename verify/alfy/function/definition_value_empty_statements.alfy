@@ -1,0 +1,6 @@
+{Function definition with empty value and expression}
+
+define print | text => string as 
+begin 
+	text is "";
+end;

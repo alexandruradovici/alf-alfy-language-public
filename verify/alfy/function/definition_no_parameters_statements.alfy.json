@@ -1,0 +1,30 @@
+{
+  "type": "script",
+  "statements": [
+    {
+      "type": "define_function",
+      "id": "say",
+      "parameters": [],
+      "value_type": "string",
+      "statements": [
+        [
+          {
+            "type": "value",
+            "t": "string",
+            "value": "say1"
+          },
+          {
+            "type": "value",
+            "t": "string",
+            "value": "say2"
+          },
+          {
+            "type": "value",
+            "t": "string",
+            "value": "say3"
+          }
+        ]
+      ]
+    }
+  ]
+}

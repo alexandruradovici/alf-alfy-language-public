@@ -1,0 +1,40 @@
+{
+  "type": "script",
+  "statements": [
+    {
+      "type": "define",
+      "elements": [
+        {
+          "id": "s",
+          "type": "int"
+        }
+      ]
+    },
+    {
+      "type": "attribution",
+      "to": {
+        "type": "id",
+        "value": "s"
+      },
+      "from": {
+        "type": "valueof",
+        "function": {
+          "id": "sum",
+          "library": []
+        },
+        "parameters": {
+          "y": {
+            "type": "value",
+            "t": "int",
+            "value": 50
+          },
+          "x": {
+            "type": "value",
+            "t": "int",
+            "value": 50
+          }
+        }
+      }
+    }
+  ]
+}

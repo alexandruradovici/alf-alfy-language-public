@@ -1,0 +1,12 @@
+{
+  "type": "script",
+  "statements": [
+    {
+      "type": "array",
+      "id": "of",
+      "elements_type": "string",
+      "from": 1,
+      "to": 9
+    }
+  ]
+}

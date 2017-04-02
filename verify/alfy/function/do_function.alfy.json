@@ -1,0 +1,19 @@
+{
+  "type": "script",
+  "statements": [
+    {
+      "type": "valueof",
+      "function": {
+        "id": "print",
+        "library": []
+      },
+      "parameters": {
+        "text": {
+          "type": "value",
+          "t": "string",
+          "value": "text to write"
+        }
+      }
+    }
+  ]
+}

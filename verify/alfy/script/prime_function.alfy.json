@@ -1,0 +1,196 @@
+{
+  "type": "script",
+  "statements": [
+    {
+      "type": "define_function",
+      "id": "prime",
+      "parameters": [
+        {
+          "id": "n",
+          "type": "int"
+        }
+      ],
+      "value_type": "logic",
+      "statements": [
+        [
+          {
+            "type": "define",
+            "elements": [
+              {
+                "id": "p",
+                "type": "logic",
+                "value": {
+                  "type": "value",
+                  "t": "logic",
+                  "value": true
+                }
+              }
+            ]
+          },
+          {
+            "type": "for",
+            "variable": "i",
+            "from": {
+              "type": "value",
+              "t": "int",
+              "value": 2
+            },
+            "to": {
+              "type": "valueof",
+              "function": {
+                "id": "sqrt",
+                "library": []
+              },
+              "parameters": {
+                "number": {
+                  "type": "id",
+                  "value": "n"
+                }
+              }
+            },
+            "step": {
+              "type": "value",
+              "t": "int",
+              "value": 1
+            },
+            "statements": [
+              {
+                "type": "if",
+                "expression": {
+                  "type": "expression",
+                  "op": "=",
+                  "left": {
+                    "type": "expression",
+                    "op": "mod",
+                    "left": {
+                      "type": "id",
+                      "value": "n"
+                    },
+                    "right": {
+                      "type": "id",
+                      "value": "i"
+                    }
+                  },
+                  "right": {
+                    "type": "value",
+                    "t": "int",
+                    "value": 0
+                  }
+                },
+                "then": [
+                  {
+                    "type": "attribution",
+                    "to": {
+                      "type": "id",
+                      "value": "p"
+                    },
+                    "from": {
+                      "type": "value",
+                      "t": "logic",
+                      "value": false
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "value",
+            "value": {
+              "type": "id",
+              "value": "p"
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "type": "define",
+      "elements": [
+        {
+          "id": "v",
+          "type": "int"
+        }
+      ]
+    },
+    {
+      "type": "attribution",
+      "to": {
+        "type": "id",
+        "value": "v"
+      },
+      "from": {
+        "type": "valueof",
+        "function": {
+          "id": "read",
+          "library": []
+        },
+        "parameters": {}
+      }
+    },
+    {
+      "type": "if",
+      "expression": {
+        "type": "valueof",
+        "function": {
+          "id": "prime",
+          "library": []
+        },
+        "parameters": {
+          "n": {
+            "type": "id",
+            "value": "v"
+          }
+        }
+      },
+      "then": [
+        {
+          "type": "valueof",
+          "function": {
+            "id": "write",
+            "library": []
+          },
+          "parameters": {
+            "text": {
+              "type": "expression",
+              "op": "+",
+              "left": {
+                "type": "id",
+                "value": "v"
+              },
+              "right": {
+                "type": "value",
+                "t": "string",
+                "value": " is prime"
+              }
+            }
+          }
+        }
+      ],
+      "else": [
+        {
+          "type": "valueof",
+          "function": {
+            "id": "write",
+            "library": []
+          },
+          "parameters": {
+            "text": {
+              "type": "expression",
+              "op": "+",
+              "left": {
+                "type": "id",
+                "value": "v"
+              },
+              "right": {
+                "type": "value",
+                "t": "string",
+                "value": " is not prime"
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

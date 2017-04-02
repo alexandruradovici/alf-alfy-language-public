@@ -1,0 +1,39 @@
+{
+  "type": "script",
+  "statements": [
+    {
+      "type": "struct",
+      "id": "school",
+      "elements": [
+        {
+          "id": "type",
+          "type": "int"
+        },
+        {
+          "id": "private",
+          "type": "logic"
+        },
+        {
+          "id": "name",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "type": "array",
+      "id": "of",
+      "elements_type": "school",
+      "from": 1,
+      "to": 9
+    },
+    {
+      "type": "define",
+      "elements": [
+        {
+          "id": "list_of_schools",
+          "type": "list"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "type": "script",
+  "statements": [
+    {
+      "type": "struct",
+      "id": "product",
+      "elements": []
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "type": "script",
+  "statements": [
+    {
+      "type": "define",
+      "elements": [
+        {
+          "id": "n",
+          "type": "int",
+          "value": {
+            "type": "value",
+            "t": "int",
+            "value": 0
+          }
+        }
+      ]
+    },
+    {
+      "type": "define",
+      "elements": [
+        {
+          "id": "s",
+          "type": "int",
+          "value": {
+            "type": "value",
+            "t": "int",
+            "value": 1
+          }
+        }
+      ]
+    },
+    {
+      "type": "define",
+      "elements": [
+        {
+          "id": "max",
+          "type": "int",
+          "value": {
+            "type": "expression",
+            "op": "*",
+            "left": {
+              "type": "value",
+              "t": "int",
+              "value": 2
+            },
+            "right": {
+              "type": "id",
+              "value": "n"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "for",
+      "variable": "i",
+      "from": {
+        "type": "expression",
+        "op": "/",
+        "left": {
+          "type": "id",
+          "value": "n"
+        },
+        "right": {
+          "type": "value",
+          "t": "int",
+          "value": 2
+        }
+      },
+      "to": {
+        "type": "id",
+        "value": "max"
+      },
+      "step": {
+        "type": "id",
+        "value": "s"
+      },
+      "statements": [
+        {
+          "type": "attribution",
+          "to": {
+            "type": "id",
+            "value": "n"
+          },
+          "from": {
+            "type": "expression",
+            "op": "+",
+            "left": {
+              "type": "id",
+              "value": "n"
+            },
+            "right": {
+              "type": "value",
+              "t": "int",
+              "value": 1
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

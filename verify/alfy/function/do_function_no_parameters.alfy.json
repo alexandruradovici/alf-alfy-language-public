@@ -1,0 +1,13 @@
+{
+  "type": "script",
+  "statements": [
+    {
+      "type": "valueof",
+      "function": {
+        "id": "getpid",
+        "library": []
+      },
+      "parameters": {}
+    }
+  ]
+}

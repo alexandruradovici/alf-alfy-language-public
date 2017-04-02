@@ -1,0 +1,74 @@
+{
+  "type": "script",
+  "statements": [
+    {
+      "type": "define",
+      "elements": [
+        {
+          "id": "n",
+          "type": "int"
+        }
+      ]
+    },
+    {
+      "type": "if",
+      "expression": {
+        "type": "expression",
+        "op": ">",
+        "left": {
+          "type": "id",
+          "value": "n"
+        },
+        "right": {
+          "type": "value",
+          "t": "int",
+          "value": 2
+        }
+      },
+      "then": [
+        {
+          "type": "attribution",
+          "to": {
+            "type": "id",
+            "value": "n"
+          },
+          "from": {
+            "type": "expression",
+            "op": "+",
+            "left": {
+              "type": "id",
+              "value": "n"
+            },
+            "right": {
+              "type": "value",
+              "t": "int",
+              "value": 1
+            }
+          }
+        }
+      ],
+      "else": [
+        {
+          "type": "attribution",
+          "to": {
+            "type": "id",
+            "value": "n"
+          },
+          "from": {
+            "type": "expression",
+            "op": "*",
+            "left": {
+              "type": "id",
+              "value": "n"
+            },
+            "right": {
+              "type": "value",
+              "t": "int",
+              "value": 1
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

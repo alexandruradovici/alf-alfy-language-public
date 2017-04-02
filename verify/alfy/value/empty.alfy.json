@@ -1,0 +1,9 @@
+{
+  "type": "script",
+  "statements": [
+    {
+      "type": "value",
+      "op": "empty"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "type": "script",
+  "statements": [
+    {
+      "type": "define_function",
+      "id": "sum",
+      "parameters": [
+        {
+          "id": "n1",
+          "type": "int"
+        },
+        {
+          "id": "n2",
+          "type": "int"
+        }
+      ],
+      "value_type": "int",
+      "statements": [
+        {
+          "type": "expression",
+          "op": "+",
+          "left": {
+            "type": "id",
+            "value": "n1"
+          },
+          "right": {
+            "type": "id",
+            "value": "n2"
+          }
+        }
+      ]
+    }
+  ]
+}

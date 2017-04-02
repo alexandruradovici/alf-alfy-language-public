@@ -1,0 +1,124 @@
+{
+  "type": "script",
+  "statements": [
+    {
+      "type": "define_function",
+      "id": "power",
+      "parameters": [
+        {
+          "id": "a",
+          "type": "int"
+        },
+        {
+          "id": "n",
+          "type": "int"
+        }
+      ],
+      "value_type": "int",
+      "statements": [
+        [
+          {
+            "type": "define",
+            "elements": [
+              {
+                "id": "p",
+                "type": "int",
+                "value": {
+                  "type": "value",
+                  "t": "int",
+                  "value": 1
+                }
+              }
+            ]
+          },
+          {
+            "type": "for",
+            "variable": "i",
+            "from": {
+              "type": "value",
+              "t": "int",
+              "value": 1
+            },
+            "to": {
+              "type": "id",
+              "value": "n"
+            },
+            "step": {
+              "type": "value",
+              "t": "int",
+              "value": 1
+            },
+            "statements": [
+              {
+                "type": "attribution",
+                "to": {
+                  "type": "id",
+                  "value": "p"
+                },
+                "from": {
+                  "type": "expression",
+                  "op": "*",
+                  "left": {
+                    "type": "id",
+                    "value": "p"
+                  },
+                  "right": {
+                    "type": "id",
+                    "value": "a"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "type": "value",
+            "value": {
+              "type": "id",
+              "value": "a"
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "type": "define",
+      "elements": [
+        {
+          "id": "n",
+          "type": "",
+          "value": {
+            "type": "value",
+            "t": "int",
+            "value": 0
+          }
+        }
+      ]
+    },
+    {
+      "type": "attribution",
+      "to": {
+        "type": "id",
+        "value": "n"
+      },
+      "from": {
+        "type": "valueof",
+        "function": {
+          "id": "power",
+          "library": []
+        },
+        "parameters": {
+          "n": {
+            "type": "value",
+            "t": "int",
+            "value": 5
+          },
+          "a": {
+            "type": "value",
+            "t": "int",
+            "value": 6
+          }
+        }
+      }
+    }
+  ]
+}

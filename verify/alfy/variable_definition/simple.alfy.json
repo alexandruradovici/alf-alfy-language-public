@@ -1,0 +1,14 @@
+{
+  "type": "script",
+  "statements": [
+    {
+      "type": "define",
+      "elements": [
+        {
+          "id": "variable",
+          "type": "int"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,165 @@
+{
+  "type": "script",
+  "statements": [
+    {
+      "type": "define",
+      "elements": [
+        {
+          "id": "n",
+          "type": "int"
+        }
+      ]
+    },
+    {
+      "type": "attribution",
+      "to": {
+        "type": "id",
+        "value": "n"
+      },
+      "from": {
+        "type": "valueof",
+        "function": {
+          "id": "read",
+          "library": []
+        },
+        "parameters": {}
+      }
+    },
+    {
+      "type": "define",
+      "elements": [
+        {
+          "id": "p",
+          "type": "logic",
+          "value": {
+            "type": "value",
+            "t": "logic",
+            "value": true
+          }
+        }
+      ]
+    },
+    {
+      "type": "for",
+      "variable": "i",
+      "from": {
+        "type": "value",
+        "t": "int",
+        "value": 2
+      },
+      "to": {
+        "type": "valueof",
+        "function": {
+          "id": "sqrt",
+          "library": []
+        },
+        "parameters": {
+          "number": {
+            "type": "id",
+            "value": "n"
+          }
+        }
+      },
+      "step": {
+        "type": "value",
+        "t": "int",
+        "value": 1
+      },
+      "statements": [
+        {
+          "type": "if",
+          "expression": {
+            "type": "expression",
+            "op": "=",
+            "left": {
+              "type": "expression",
+              "op": "mod",
+              "left": {
+                "type": "id",
+                "value": "n"
+              },
+              "right": {
+                "type": "id",
+                "value": "i"
+              }
+            },
+            "right": {
+              "type": "value",
+              "t": "int",
+              "value": 0
+            }
+          },
+          "then": [
+            {
+              "type": "attribution",
+              "to": {
+                "type": "id",
+                "value": "p"
+              },
+              "from": {
+                "type": "value",
+                "t": "logic",
+                "value": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "if",
+      "expression": {
+        "type": "id",
+        "value": "p"
+      },
+      "then": [
+        {
+          "type": "valueof",
+          "function": {
+            "id": "write",
+            "library": []
+          },
+          "parameters": {
+            "text": {
+              "type": "expression",
+              "op": "+",
+              "left": {
+                "type": "id",
+                "value": "n"
+              },
+              "right": {
+                "type": "value",
+                "t": "string",
+                "value": " is prime"
+              }
+            }
+          }
+        }
+      ],
+      "else": [
+        {
+          "type": "valueof",
+          "function": {
+            "id": "write",
+            "library": []
+          },
+          "parameters": {
+            "text": {
+              "type": "expression",
+              "op": "+",
+              "left": {
+                "type": "id",
+                "value": "n"
+              },
+              "right": {
+                "type": "value",
+                "t": "string",
+                "value": " is not prime"
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
