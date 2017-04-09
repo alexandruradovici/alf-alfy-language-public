@@ -8,6 +8,11 @@
         "library": []
       },
       "parameters": {
+        "additional": {
+          "type": "value",
+          "t": "string",
+          "value": " text "
+        },
         "text": {
           "type": "expression",
           "op": "+",

@@ -97,6 +97,7 @@ fi
 
 echo 'Tests: ' $passed '/' $total
 echo 'Points: '$POINTS
+echo 'Mark without penalities: '`echo $(($POINTS * 2)) | sed 's/..$/.&/'`
 
 if [ "$passed" != "$total" ];
 then
