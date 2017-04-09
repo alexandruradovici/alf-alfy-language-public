@@ -71,7 +71,7 @@
             ]
           },
           {
-            "type": "value",
+            "type": "value_of_function",
             "value": {
               "type": "id",
               "value": "a"

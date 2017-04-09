@@ -95,7 +95,7 @@
             ]
           },
           {
-            "type": "value",
+            "type": "value_of_function",
             "value": {
               "type": "id",
               "value": "p"
@@ -129,83 +129,66 @@
       }
     },
     {
-      "type": "for",
-      "variable": "i",
-      "from": {
-        "type": "id",
-        "value": "v"
-      },
-      "to": {
-        "type": "value",
-        "t": "int",
-        "value": 2
-      },
-      "step": {
-        "type": "expression",
-        "op": "negative",
-        "value": {
-          "type": "value",
-          "t": "int",
-          "value": 1
+      "type": "if",
+      "expression": {
+        "type": "valueof",
+        "function": {
+          "id": "prime",
+          "library": []
+        },
+        "parameters": {
+          "n": {
+            "type": "id",
+            "value": "v"
+          }
         }
       },
-      "statements": [
+      "then": [
         {
-          "type": "if",
-          "expression": {
-            "type": "valueof",
-            "function": {
-              "id": "prime",
-              "library": []
-            },
-            "parameters": {
-              "n": {
-                "type": "id",
-                "value": "i"
-              }
-            }
+          "type": "valueof",
+          "function": {
+            "id": "write",
+            "library": []
           },
-          "then": [
-            {
-              "type": "valueof",
-              "function": {
-                "id": "write",
-                "library": []
+          "parameters": {
+            "text": {
+              "type": "expression",
+              "op": "+",
+              "left": {
+                "type": "id",
+                "value": "v"
               },
-              "parameters": {
-                "text": {
-                  "type": "expression",
-                  "op": "+",
-                  "left": {
-                    "type": "expression",
-                    "op": "+",
-                    "left": {
-                      "type": "expression",
-                      "op": "+",
-                      "left": {
-                        "type": "value",
-                        "t": "string",
-                        "value": "The smallest prime number less than "
-                      },
-                      "right": {
-                        "type": "id",
-                        "value": "v"
-                      }
-                    },
-                    "right": {
-                      "type": "value",
-                      "t": "string",
-                      "value": " is "
-                    }
-                  },
-                  "right": {
-                    "type": "id",
-                    "value": "i"
-                  }
-                }
+              "right": {
+                "type": "value",
+                "t": "string",
+                "value": " is prime"
               }
             }
-          ]
+          }
+        }
+      ],
+      "else": [
+        {
+          "type": "valueof",
+          "function": {
+            "id": "write",
+            "library": []
+          },
+          "parameters": {
+            "text": {
+              "type": "expression",
+              "op": "+",
+              "left": {
+                "type": "id",
+                "value": "v"
+              },
+              "right": {
+                "type": "value",
+                "t": "string",
+                "value": " is not prime"
+              }
+            }
+          }
         }
       ]
     }

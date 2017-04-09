@@ -23,17 +23,22 @@ passed=0
 failed=0
 total=0
 
-echo '{ "node":true, "esnext":true }' > .jshintrc
+rm alfy.js
+
+echo '{ "node":true, "loopfunc": true, "esnext":true }' > .jshintrc
 if [ ! -f `basename "$1"` ];
 then
 	echo "Your main.js file is missing"
 elif ! jshint *.js;
 then
 	echo "Please review your code, you have jshint errors"
+elif ! jison alfy.jison -o alfy.js
+then
+	echo "Please review your jiosn file, you have errors"
 else
 	cd -
 
-	for folder in robot/*
+	for folder in alfy/*
 	do
 		if [ -d $folder ];
 		then
@@ -47,33 +52,37 @@ else
 			fi
 			if [ $failed == 0 ] || ! (echo $folder | grep bonus &> /dev/null);
 			then
-				for file in "$folder"/*.s
+				for file in "$folder"/*.alfy
 				do
 					inputfile=`pwd`/"$file"
-					outputfile=output/`basename "$file"`.out
-					originalfile="$file.out"
+					outputfile=output/`basename "$file"`.json
+					originalfile="$file.json"
 					errorsfile=output/`basename "$file"`.err
-					title=`head -n 1 "$file" | grep '#' | cut -d '#' -f 2`
+					title=`head -n 1 "$file" | grep '{' | cut -d '{' -f 2 | cut -d '}' -f 1` 
 					if [ `echo -n "$title" | wc -c` -eq 0 ];
 					then
 						title=`basename $file`
 					fi
-					node "$1" "$inputfile" > "$outputfile"
+					node "$1" "$inputfile" "$outputfile"
 					strtitle="Verifying $title"
 					printf '%s' "$strtitle"
 					pad=$(printf '%0.1s' "."{1..60})
-					padlength=65
-					if diff --side-by-side --suppress-common-lines "$originalfile" "$outputfile" &> "$errorsfile"
+					padlength=70
+					# echo $originalfile
+					# echo $outputfile
+					if node verify.js "$originalfile" "$outputfile" &> "$errorsfile"
 					then
 						str="ok (""$P""p)"
 						passed=$(($passed+1))
 						POINTS=$(($POINTS+$P))
 					else
+						diff --ignore-all-space -y --suppress-common-lines "$originalfile" "$outputfile" &> "$errorsfile" 
 						str="error (0p)"
 						failed=$(($failed+1))
 						echo "--------------" >> $errorslist 
 						echo $strtitle >> $errorslist
-						head -10 "$errorsfile" >> $errorslist
+						# head -10 "$errorsfile" >> $errorslist
+						cat "$errorsfile" >> $errorslist
 					fi
 					total=$(($total+1))
 					printf '%*.*s' 0 $((padlength - ${#strtitle} - ${#str} )) "$pad"
@@ -91,6 +100,6 @@ echo 'Points: '$POINTS
 
 if [ "$passed" != "$total" ];
 then
-	echo -e "Original file						      | Your file" 1>&2
+	echo -e "Original tree						      | Your tree" 1>&2
 	cat $errorslist 1>&2
 fi

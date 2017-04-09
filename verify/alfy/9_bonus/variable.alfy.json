@@ -1,0 +1,31 @@
+{
+  "type": "script",
+  "statements": [
+    {
+      "type": "define",
+      "elements": [
+        {
+          "id": "s",
+          "type": "string",
+          "value": {
+            "type": "id",
+            "value": "variable"
+          }
+        }
+      ]
+    },
+    {
+      "type": "valueof",
+      "function": {
+        "id": "print",
+        "library": []
+      },
+      "parameters": {
+        "text": {
+          "type": "id",
+          "value": "s"
+        }
+      }
+    }
+  ]
+}

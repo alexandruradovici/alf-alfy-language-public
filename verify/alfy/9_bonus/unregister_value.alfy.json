@@ -1,0 +1,50 @@
+{
+  "type": "script",
+  "statements": [
+    {
+      "type": "valueof",
+      "function": {
+        "id": "print",
+        "library": []
+      },
+      "parameters": {
+        "text": {
+          "type": "expression",
+          "op": "+",
+          "left": {
+            "type": "value",
+            "t": "string",
+            "value": "Print text "
+          },
+          "right": {
+            "type": "value",
+            "t": "int",
+            "value": 1
+          }
+        }
+      }
+    },
+    {
+      "type": "valueof",
+      "function": {
+        "id": "print",
+        "library": []
+      },
+      "parameters": {
+        "text": {
+          "type": "expression",
+          "op": "+",
+          "left": {
+            "type": "value",
+            "t": "string",
+            "value": "Print text "
+          },
+          "right": {
+            "type": "id",
+            "value": "P"
+          }
+        }
+      }
+    }
+  ]
+}
