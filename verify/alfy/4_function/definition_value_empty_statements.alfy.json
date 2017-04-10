@@ -12,20 +12,18 @@
       ],
       "value_type": "empty",
       "statements": [
-        [
-          {
-            "type": "attribution",
-            "to": {
-              "type": "id",
-              "value": "text"
-            },
-            "from": {
-              "type": "value",
-              "t": "string",
-              "value": ""
-            }
+        {
+          "type": "attribution",
+          "to": {
+            "type": "id",
+            "value": "text"
+          },
+          "from": {
+            "type": "value",
+            "t": "string",
+            "value": ""
           }
-        ]
+        }
       ]
     }
   ]

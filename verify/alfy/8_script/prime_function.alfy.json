@@ -12,96 +12,94 @@
       ],
       "value_type": "logic",
       "statements": [
-        [
-          {
-            "type": "define",
-            "elements": [
-              {
-                "id": "p",
-                "type": "logic",
-                "value": {
-                  "type": "value",
-                  "t": "logic",
-                  "value": true
-                }
+        {
+          "type": "define",
+          "elements": [
+            {
+              "id": "p",
+              "type": "logic",
+              "value": {
+                "type": "value",
+                "t": "logic",
+                "value": true
               }
-            ]
+            }
+          ]
+        },
+        {
+          "type": "for",
+          "variable": "i",
+          "from": {
+            "type": "value",
+            "t": "int",
+            "value": 2
           },
-          {
-            "type": "for",
-            "variable": "i",
-            "from": {
-              "type": "value",
-              "t": "int",
-              "value": 2
+          "to": {
+            "type": "valueof",
+            "function": {
+              "id": "sqrt",
+              "library": []
             },
-            "to": {
-              "type": "valueof",
-              "function": {
-                "id": "sqrt",
-                "library": []
-              },
-              "parameters": {
-                "number": {
-                  "type": "id",
-                  "value": "n"
-                }
+            "parameters": {
+              "number": {
+                "type": "id",
+                "value": "n"
               }
-            },
-            "step": {
-              "type": "value",
-              "t": "int",
-              "value": 1
-            },
-            "statements": [
-              {
-                "type": "if",
-                "expression": {
+            }
+          },
+          "step": {
+            "type": "value",
+            "t": "int",
+            "value": 1
+          },
+          "statements": [
+            {
+              "type": "if",
+              "expression": {
+                "type": "expression",
+                "op": "=",
+                "left": {
                   "type": "expression",
-                  "op": "=",
+                  "op": "mod",
                   "left": {
-                    "type": "expression",
-                    "op": "mod",
-                    "left": {
-                      "type": "id",
-                      "value": "n"
-                    },
-                    "right": {
-                      "type": "id",
-                      "value": "i"
-                    }
+                    "type": "id",
+                    "value": "n"
                   },
                   "right": {
-                    "type": "value",
-                    "t": "int",
-                    "value": 0
+                    "type": "id",
+                    "value": "i"
                   }
                 },
-                "then": [
-                  {
-                    "type": "attribution",
-                    "to": {
-                      "type": "id",
-                      "value": "p"
-                    },
-                    "from": {
-                      "type": "value",
-                      "t": "logic",
-                      "value": false
-                    }
+                "right": {
+                  "type": "value",
+                  "t": "int",
+                  "value": 0
+                }
+              },
+              "then": [
+                {
+                  "type": "attribution",
+                  "to": {
+                    "type": "id",
+                    "value": "p"
+                  },
+                  "from": {
+                    "type": "value",
+                    "t": "logic",
+                    "value": false
                   }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "value_of_function",
-            "value": {
-              "type": "id",
-              "value": "p"
+                }
+              ]
             }
+          ]
+        },
+        {
+          "type": "value_of_function",
+          "value": {
+            "type": "id",
+            "value": "p"
           }
-        ]
+        }
       ]
     },
     {

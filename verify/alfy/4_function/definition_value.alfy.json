@@ -16,36 +16,34 @@
       ],
       "value_type": "int",
       "statements": [
-        [
-          {
-            "type": "define",
-            "elements": [
-              {
-                "id": "s",
-                "type": "int",
-                "value": {
-                  "type": "expression",
-                  "op": "+",
-                  "left": {
-                    "type": "id",
-                    "value": "n1"
-                  },
-                  "right": {
-                    "type": "id",
-                    "value": "n2"
-                  }
+        {
+          "type": "define",
+          "elements": [
+            {
+              "id": "s",
+              "type": "int",
+              "value": {
+                "type": "expression",
+                "op": "+",
+                "left": {
+                  "type": "id",
+                  "value": "n1"
+                },
+                "right": {
+                  "type": "id",
+                  "value": "n2"
                 }
               }
-            ]
-          },
-          {
-            "type": "value_of_function",
-            "value": {
-              "type": "id",
-              "value": "s"
             }
+          ]
+        },
+        {
+          "type": "value_of_function",
+          "value": {
+            "type": "id",
+            "value": "s"
           }
-        ]
+        }
       ]
     }
   ]

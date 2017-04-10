@@ -16,20 +16,18 @@
       ],
       "value_type": "int",
       "statements": [
-        [
-          {
-            "type": "expression",
-            "op": "+",
-            "left": {
-              "type": "id",
-              "value": "n1"
-            },
-            "right": {
-              "type": "id",
-              "value": "n2"
-            }
+        {
+          "type": "expression",
+          "op": "+",
+          "left": {
+            "type": "id",
+            "value": "n1"
+          },
+          "right": {
+            "type": "id",
+            "value": "n2"
           }
-        ]
+        }
       ]
     }
   ]
