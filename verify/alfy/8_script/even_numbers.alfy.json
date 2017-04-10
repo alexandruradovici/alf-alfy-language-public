@@ -128,41 +128,39 @@
         }
       },
       "statements": [
-        [
-          {
-            "type": "valueof",
-            "function": {
-              "id": "write",
-              "library": []
-            },
-            "parameters": {
-              "text": {
-                "type": "id",
-                "value": "n"
-              }
-            }
+        {
+          "type": "valueof",
+          "function": {
+            "id": "write",
+            "library": []
           },
-          {
-            "type": "attribution",
-            "to": {
+          "parameters": {
+            "text": {
+              "type": "id",
+              "value": "n"
+            }
+          }
+        },
+        {
+          "type": "attribution",
+          "to": {
+            "type": "id",
+            "value": "n"
+          },
+          "from": {
+            "type": "expression",
+            "op": "+",
+            "left": {
               "type": "id",
               "value": "n"
             },
-            "from": {
-              "type": "expression",
-              "op": "+",
-              "left": {
-                "type": "id",
-                "value": "n"
-              },
-              "right": {
-                "type": "value",
-                "t": "int",
-                "value": 2
-              }
+            "right": {
+              "type": "value",
+              "t": "int",
+              "value": 2
             }
           }
-        ]
+        }
       ]
     }
   ]
