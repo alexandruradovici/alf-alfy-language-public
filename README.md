@@ -10,11 +10,6 @@ If you have any questions, please open an issue.
 
 ## Tests 
 
-
-````
-Tests are not working yet
-````
-
 You need bash (Linux or Windows Linux Subsystem) to run the tests.
 
 Clone this repository into a folder and copy it's contents to your homework folder.
