@@ -1,5 +1,5 @@
 {
-  "type": "syntax",
+  "error": "syntax",
   "line": 6,
   "text": "as",
   "token": "AS",
