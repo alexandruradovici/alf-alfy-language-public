@@ -1,6 +1,7 @@
 "use strict";
 
 var assert = require ('assert');
+var util = require ('util');
 
 var originalFile = process.argv[2];
 var verifyFile = process.argv[3];
@@ -52,7 +53,7 @@ else
 		process.exit (-1);
 	}
 	else
-	if (typeof verifyTree.expected !== 'array' || verifyTree.expected.length === 0 || typeof verifyTree.expected[0] !== 'string')
+	if (!util.isArray (verifyTree.expected) || verifyTree.expected.length === 0 || typeof verifyTree.expected[0] !== 'string')
 	{
 		console.error ('You should have at least an expected token');
 		process.exit (-1);
