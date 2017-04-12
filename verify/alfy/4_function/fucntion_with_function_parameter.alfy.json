@@ -8,10 +8,19 @@
         "library": []
       },
       "parameters": {
-        "additional": {
-          "type": "value",
-          "t": "string",
-          "value": " text "
+        "number": {
+          "type": "valueof",
+          "function": {
+            "id": "math",
+            "library": []
+          },
+          "parameters": {
+            "a": {
+              "type": "value",
+              "t": "int",
+              "value": 47821
+            }
+          }
         },
         "text": {
           "type": "expression",

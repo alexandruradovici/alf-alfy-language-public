@@ -1,0 +1,15 @@
+{
+  "type": "script",
+  "statements": [
+    {
+      "type": "value",
+      "t": "symbol",
+      "value": "s"
+    },
+    {
+      "type": "value",
+      "t": "string",
+      "value": "a text"
+    }
+  ]
+}

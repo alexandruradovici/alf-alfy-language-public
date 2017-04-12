@@ -1,0 +1,10 @@
+{
+  "type": "script",
+  "statements": [
+    {
+      "type": "value",
+      "t": "symbol",
+      "value": "\""
+    }
+  ]
+}

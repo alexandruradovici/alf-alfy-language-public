@@ -1,0 +1,15 @@
+{
+  "type": "script",
+  "statements": [
+    {
+      "type": "value",
+      "t": "int",
+      "value": 758234
+    },
+    {
+      "type": "value",
+      "t": "logic",
+      "value": false
+    }
+  ]
+}

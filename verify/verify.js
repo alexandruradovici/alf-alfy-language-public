@@ -46,17 +46,19 @@ else
 		console.error ('The error line should be '+originalTree.line);
 		process.exit (-1);
 	}
-	else
-	if (typeof verifyTree.token !== 'string')
+	else if (verifyTree.error === 'syntax')
 	{
-		console.error ('Your error should have a token');
-		process.exit (-1);
-	}
-	else
-	if (!util.isArray (verifyTree.expected) || verifyTree.expected.length === 0 || typeof verifyTree.expected[0] !== 'string')
-	{
-		console.error ('You should have at least an expected token');
-		process.exit (-1);
+		if (typeof verifyTree.token !== 'string')
+		{
+			console.error ('Your error should have a token');
+			process.exit (-1);
+		}
+		else
+		if (!util.isArray (verifyTree.expected) || verifyTree.expected.length === 0 || typeof verifyTree.expected[0] !== 'string')
+		{
+			console.error ('You should have at least an expected token');
+			process.exit (-1);
+		}
 	}
 }
 

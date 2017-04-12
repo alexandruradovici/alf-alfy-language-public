@@ -1,0 +1,31 @@
+{
+  "error": "syntax",
+  "line": 4,
+  "text": "\"this is a text\"",
+  "token": "STRING_VALUE",
+  "expected": [
+    "'IDENTIFIER'",
+    "'AS'",
+    "'VALUE'",
+    "'PARAMETERS'",
+    "'TO'",
+    "'STEP'",
+    "'RUN'",
+    "'END'",
+    "'THEN'",
+    "','",
+    "')'",
+    "'+'",
+    "'-'",
+    "'*'",
+    "'/'",
+    "'MOD'",
+    "'AND'",
+    "'OR'",
+    "'XOR'",
+    "'='",
+    "'!='",
+    "'INEQUALITY'",
+    "';'"
+  ]
+}
