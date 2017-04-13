@@ -1,0 +1,44 @@
+{
+  "type": "script",
+  "statements": [
+    {
+      "type": "array",
+      "id": "list",
+      "elements_type": "string",
+      "from": 1,
+      "to": 9
+    },
+    {
+      "type": "define",
+      "elements": [
+        {
+          "id": "v",
+          "type": "list"
+        }
+      ]
+    },
+    {
+      "type": "attribution",
+      "to": {
+        "type": "element_of_array",
+        "array": {
+          "type": "id",
+          "value": "v"
+        },
+        "index": {
+          "type": "valueof",
+          "function": {
+            "id": "position",
+            "library": []
+          },
+          "parameters": {}
+        }
+      },
+      "from": {
+        "type": "value",
+        "t": "string",
+        "value": "The new name for the school"
+      }
+    }
+  ]
+}
