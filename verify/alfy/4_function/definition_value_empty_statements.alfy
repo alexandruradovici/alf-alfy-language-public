@@ -1,4 +1,4 @@
-{Function definition with empty value and expression}
+{Function definition with empty value and statements}
 
 define print | text => string as 
 begin 
