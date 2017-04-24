@@ -498,7 +498,7 @@ expression:		expression '+' expression
 						{
 							$$ = {
 								type: 'value',
-								op: 'empty',
+								t: 'empty',
 								line: yylineno+1
 							};
 						}
