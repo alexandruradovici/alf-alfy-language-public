@@ -6,9 +6,11 @@
       "elements": [
         {
           "id": "n",
-          "type": "int"
+          "type": "int",
+          "line": 3
         }
-      ]
+      ],
+      "line": 3
     },
     {
       "type": "repeat",
@@ -17,20 +19,24 @@
         "op": "!=",
         "left": {
           "type": "id",
-          "value": "n"
+          "value": "n",
+          "line": 10
         },
         "right": {
           "type": "value",
           "t": "int",
-          "value": 0
-        }
+          "value": 0,
+          "line": 10
+        },
+        "line": 10
       },
       "statements": [
         {
           "type": "attribution",
           "to": {
             "type": "id",
-            "value": "n"
+            "value": "n",
+            "line": 6
           },
           "from": {
             "type": "valueof",
@@ -42,15 +48,19 @@
               "upto": {
                 "type": "value",
                 "t": "int",
-                "value": 100
+                "value": 100,
+                "line": 6
               },
               "start": {
                 "type": "value",
                 "t": "int",
-                "value": 1
+                "value": 1,
+                "line": 6
               }
-            }
-          }
+            },
+            "line": 6
+          },
+          "line": 6
         },
         {
           "type": "if",
@@ -59,13 +69,16 @@
             "op": "!=",
             "left": {
               "type": "id",
-              "value": "n"
+              "value": "n",
+              "line": 7
             },
             "right": {
               "type": "value",
               "t": "int",
-              "value": 0
-            }
+              "value": 0,
+              "line": 7
+            },
+            "line": 7
           },
           "then": [
             {
@@ -77,13 +90,18 @@
               "parameters": {
                 "text": {
                   "type": "id",
-                  "value": "n"
+                  "value": "n",
+                  "line": 8
                 }
-              }
+              },
+              "line": 8
             }
-          ]
+          ],
+          "line": 9
         }
-      ]
+      ],
+      "line": 10
     }
-  ]
+  ],
+  "line": 11
 }

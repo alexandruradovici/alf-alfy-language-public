@@ -6,9 +6,11 @@
       "elements": [
         {
           "id": "n",
-          "type": "int"
+          "type": "int",
+          "line": 3
         }
-      ]
+      ],
+      "line": 3
     },
     {
       "type": "if",
@@ -17,36 +19,46 @@
         "op": ">",
         "left": {
           "type": "id",
-          "value": "n"
+          "value": "n",
+          "line": 5
         },
         "right": {
           "type": "value",
           "t": "int",
-          "value": 2
-        }
+          "value": 2,
+          "line": 5
+        },
+        "line": 5
       },
       "then": [
         {
           "type": "attribution",
           "to": {
             "type": "id",
-            "value": "n"
+            "value": "n",
+            "line": 6
           },
           "from": {
             "type": "expression",
             "op": "+",
             "left": {
               "type": "id",
-              "value": "n"
+              "value": "n",
+              "line": 6
             },
             "right": {
               "type": "value",
               "t": "int",
-              "value": 1
-            }
-          }
+              "value": 1,
+              "line": 6
+            },
+            "line": 6
+          },
+          "line": 6
         }
-      ]
+      ],
+      "line": 7
     }
-  ]
+  ],
+  "line": 7
 }

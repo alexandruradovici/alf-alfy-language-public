@@ -7,7 +7,8 @@
       "parameters": [
         {
           "id": "text",
-          "type": "string"
+          "type": "string",
+          "line": 3
         }
       ],
       "value_type": "empty",
@@ -16,15 +17,20 @@
           "type": "attribution",
           "to": {
             "type": "id",
-            "value": "text"
+            "value": "text",
+            "line": 3
           },
           "from": {
             "type": "value",
             "t": "string",
-            "value": ""
-          }
+            "value": "",
+            "line": 3
+          },
+          "line": 3
         }
-      ]
+      ],
+      "line": 3
     }
-  ]
+  ],
+  "line": 4
 }

@@ -10,19 +10,24 @@
         {
           "type": "value",
           "t": "string",
-          "value": "say1"
+          "value": "say1",
+          "line": 5
         },
         {
           "type": "value",
           "t": "string",
-          "value": "say2"
+          "value": "say2",
+          "line": 6
         },
         {
           "type": "value",
           "t": "string",
-          "value": "say3"
+          "value": "say3",
+          "line": 7
         }
-      ]
+      ],
+      "line": 8
     }
-  ]
+  ],
+  "line": 8
 }

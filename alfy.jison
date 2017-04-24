@@ -76,7 +76,8 @@ false 							return 'FALSE';
 
 /lex
 
-%left AND OR XOR
+%left AND 
+%left OR XOR
 %left '=' '!='
 $left INEQUALITY
 %right NOT
@@ -94,7 +95,8 @@ start: statements EOF
 			{
 				$$ = {
 					type: 'script',
-					statements: $1
+					statements: $1,
+					line: yylineno+1
 				};
 				return $$;
 			};
@@ -103,7 +105,8 @@ variable_definition: 		DEFINE variables
 						{
 							$$ = {
 								type: 'define',
-								elements: $2
+								elements: $2,
+								line: yylineno+1
 							};
 						};
 
@@ -121,7 +124,8 @@ variable:		IDENTIFIER OF_TYPE data_type
 							{
 								$$ = {
 									id: $1,
-									type: $3
+									type: $3,
+									line: yylineno+1
 								};
 							}
 				|	IDENTIFIER OF_TYPE data_type  IS expression
@@ -129,7 +133,8 @@ variable:		IDENTIFIER OF_TYPE data_type
 								$$ = {
 									id: $1,
 									type: $3,
-									value: $5
+									value: $5,
+									line: yylineno+1
 								};
 							}
 				|	IDENTIFIER IS expression
@@ -137,7 +142,8 @@ variable:		IDENTIFIER OF_TYPE data_type
 								$$ = {
 									id: $1,
 									type: '',
-									value: $3
+									value: $3,
+									line: yylineno+1
 								};
 							}
 				|	IDENTIFIER OF_TYPE date_type run_parameters
@@ -145,7 +151,8 @@ variable:		IDENTIFIER OF_TYPE data_type
 								$$ = {
 									id: $1,
 									type: $3,
-									values: $5
+									values: $5,
+									line: yylineno+1
 								};
 							};
 
@@ -157,7 +164,8 @@ function_definition:		DEFINE IDENTIFIER parameters AS statement_posibilities
 					id: $2,
 					parameters: $3,
 					value_type: 'empty',
-					statements: $5
+					statements: $5,
+					line: yylineno+1
 				};
 			};
 
@@ -169,7 +177,8 @@ function_definition:		DEFINE IDENTIFIER parameters VALUE data_type AS statement_
 					id: $2,
 					parameters: $3,
 					value_type: $5,
-					statements: $7
+					statements: $7,
+					line: yylineno+1
 				};
 			};
 
@@ -187,7 +196,8 @@ function_run:	VALUE_OF function_name run_parameters
 				$$ = {
 					type: 'valueof',
 					function: $2,
-					parameters: $3
+					parameters: $3,
+					line: yylineno+1
 				};
 			};
 
@@ -234,7 +244,8 @@ for:	FOR IDENTIFIER FROM expression DIRECTION expression STEP expression RUN sta
 					 	direction: $5,
 					 	to: $6,
 					 	step: $8,
-					 	statements: $10
+					 	statements: $10,
+					 	line: yylineno+1
 					};
 				};
 
@@ -243,7 +254,8 @@ while:	WHILE expression RUN statements END
 					$$ = {
 						type: 'while',
 						expression: $2,
-						statements: $4
+						statements: $4,
+						line: yylineno+1
 					};
 				};
 
@@ -253,7 +265,8 @@ repeat:	REPEAT statements ASLONGAS expression
 					$$ = {
 						type: 'repeat',
 						expression: $4,
-						statements: $2
+						statements: $2,
+						line: yylineno+1
 					};
 				};
 
@@ -262,7 +275,8 @@ if:		IF expression THEN statements END
 					$$ = {
 						type: 'if',
 						expression: $2,
-						then: $4
+						then: $4,
+						line: yylineno+1
 					};
 				}
 	|	IF expression THEN statements ELSE statements END
@@ -271,7 +285,8 @@ if:		IF expression THEN statements END
 						type: 'if',
 						expression: $2,
 						then: $4,
-						else: $6
+						else: $6,
+						line: yylineno+1
 					};
 				};
 
@@ -290,7 +305,8 @@ array: ARRAY IDENTIFIER OF data_type FROM INTEGER_NUMBER TO INTEGER_NUMBER
 									id: $2,
 									elements_type: $4,
 									from: parseInt ($6),
-									to: parseInt ($8)
+									to: parseInt ($8),
+									line: yylineno+1
 								};
 							};
 
@@ -299,7 +315,8 @@ struct:	STRUCT IDENTIFIER struct_elements END
 						$$ = {
 							type: 'struct',
 							id: $2,
-							elements: $3
+							elements: $3,
+							line: yylineno+1
 						};
 					};
 
@@ -325,7 +342,8 @@ left_assignment:		IDENTIFIER
 								{
 									$$ = {
 										type: 'id',
-										value: $1
+										value: $1,
+										line: yylineno+1
 									};
 								}
 					|	element_of_array
@@ -336,7 +354,8 @@ element_of_struct:		 left_assignment ELEMENT IDENTIFIER
 									$$ = {
 										type: 'element_of_struct',
 										struct: $1,
-										element: $3
+										element: $3,
+										line: yylineno+1
 									};
 								};
 
@@ -345,7 +364,8 @@ element_of_array:		left_assignment '(' expression ')'
 									$$ = {
 										type: 'element_of_array',
 										array: $1,
-										index: $3
+										index: $3,
+										line: yylineno+1
 									};
 								};
 
@@ -354,7 +374,8 @@ attribution:	left_assignment IS expression
 							$$ = {
 								type: 'attribution',
 								to: $1, 
-								from: $3
+								from: $3,
+								line: yylineno+1
 							};
 						};
 
@@ -364,7 +385,8 @@ expression:		expression '+' expression
 								type: 'expression',
 								op: '+',
 								left: $1,
-								right: $3
+								right: $3,
+								line: yylineno+1
 							};
 						}
 			|	expression '-' expression
@@ -373,7 +395,8 @@ expression:		expression '+' expression
 								type: 'expression',
 								op: '-',
 								left: $1,
-								right: $3
+								right: $3,
+								line: yylineno+1
 							};
 						}
 			|	expression '*' expression
@@ -382,7 +405,8 @@ expression:		expression '+' expression
 								type: 'expression',
 								op: '*',
 								left: $1,
-								right: $3
+								right: $3,
+								line: yylineno+1
 							};
 						}
 			|	expression '/' expression
@@ -391,7 +415,8 @@ expression:		expression '+' expression
 								type: 'expression',
 								op: '/',
 								left: $1,
-								right: $3
+								right: $3,
+								line: yylineno+1
 							};
 						}
 			|	left_assignment
@@ -408,7 +433,8 @@ expression:		expression '+' expression
 								type: 'expression',
 								op: 'mod',
 								left: $1,
-								right: $3
+								right: $3,
+								line: yylineno+1
 							};
 						}
 			|	INTEGER_NUMBER
@@ -416,7 +442,8 @@ expression:		expression '+' expression
 							$$ = {
 								type: 'value',
 								t: 'int',
-								value: parseInt ($1)
+								value: parseInt ($1),
+								line: yylineno+1
 							};
 						}
 			|	FLOAT_NUMBER
@@ -424,7 +451,8 @@ expression:		expression '+' expression
 							$$ = {
 								type: 'value',
 								t: 'real',
-								value: parseFloat ($1)
+								value: parseFloat ($1),
+								line: yylineno+1
 							};
 						}
 			|	STRING_VALUE
@@ -444,7 +472,8 @@ expression:		expression '+' expression
 							$$ = {
 								type: 'value',
 								t: t,
-								value: value
+								value: value,
+								line: yylineno+1
 							};
 						}
 			|	FALSE
@@ -452,7 +481,8 @@ expression:		expression '+' expression
 							$$ = {
 								type: 'value',
 								t: 'logic',
-								value: false
+								value: false,
+								line: yylineno+1
 							};
 						}
 			|	TRUE
@@ -460,14 +490,16 @@ expression:		expression '+' expression
 							$$ = {
 								type: 'value',
 								t: 'logic',
-								value: true
+								value: true,
+								line: yylineno+1
 							};
 						}
 			|	EMPTY
 						{
 							$$ = {
 								type: 'value',
-								op: 'empty'
+								op: 'empty',
+								line: yylineno+1
 							};
 						}
 
@@ -481,6 +513,7 @@ expression:		expression '+' expression
 								type: 'expression',
 								op: 'not',
 								value: $3,
+								line: yylineno+1
 							};
 						} 
 			|
@@ -490,6 +523,7 @@ expression:		expression '+' expression
 								type: 'expression',
 								op: 'negative',
 								value: $2,
+								line: yylineno+1
 							};
 						} 	
 			|	expression AND expression
@@ -498,7 +532,8 @@ expression:		expression '+' expression
 								type: 'expression',
 								op: 'AND',
 								left: $1,
-								right: $3
+								right: $3,
+								line: yylineno+1
 							};
 						}
 			|	expression OR expression
@@ -507,7 +542,8 @@ expression:		expression '+' expression
 								type: 'expression',
 								op: 'OR',
 								left: $1,
-								right: $3
+								right: $3,
+								line: yylineno+1
 							};
 						}
 			|	expression XOR expression
@@ -516,7 +552,8 @@ expression:		expression '+' expression
 								type: 'expression',
 								op: 'XOR',
 								left: $1,
-								right: $3
+								right: $3,
+								line: yylineno+1
 							};
 						}
 			|	expression '=' expression
@@ -525,7 +562,8 @@ expression:		expression '+' expression
 								type: 'expression',
 								op: '=',
 								left: $1,
-								right: $3
+								right: $3,
+								line: yylineno+1
 							};
 						}
 			|	expression '!=' expression
@@ -534,7 +572,8 @@ expression:		expression '+' expression
 								type: 'expression',
 								op: '!=',
 								left: $1,
-								right: $3
+								right: $3,
+								line: yylineno+1
 							};
 						}
 			|	expression INEQUALITY expression
@@ -543,7 +582,8 @@ expression:		expression '+' expression
 								type: 'expression',
 								op: $2,
 								left: $1,
-								right: $3
+								right: $3,
+								line: yylineno+1
 							};
 						};
 
@@ -554,7 +594,8 @@ use:		USE STRING AS IDENTIFIER
 							$$ = {
 								type: 'script',
 								name: $2,
-								variable: $4
+								variable: $4,
+								line: yylineno+1
 							};
 						};
 
@@ -573,7 +614,8 @@ statement_posibilities:		expression
 										{
 											$$ = {
 												type: 'value_of_function',
-												value: $2
+												value: $2,
+												line: yylineno+1
 											};
 										}
 							|	BEGIN statements END
@@ -582,7 +624,8 @@ statement_posibilities:		expression
 										}
 							| {
 								 $$ = {
-								 	type: 'empty'
+								 	type: 'empty',
+								 	line: yylineno+1
 								 };
 							  };
 

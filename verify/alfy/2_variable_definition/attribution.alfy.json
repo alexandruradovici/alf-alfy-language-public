@@ -6,21 +6,27 @@
       "elements": [
         {
           "id": "n",
-          "type": "int"
+          "type": "int",
+          "line": 2
         }
-      ]
+      ],
+      "line": 2
     },
     {
       "type": "attribution",
       "to": {
         "type": "id",
-        "value": "n"
+        "value": "n",
+        "line": 4
       },
       "from": {
         "type": "value",
         "t": "int",
-        "value": 6
-      }
+        "value": 6,
+        "line": 4
+      },
+      "line": 4
     }
-  ]
+  ],
+  "line": 5
 }

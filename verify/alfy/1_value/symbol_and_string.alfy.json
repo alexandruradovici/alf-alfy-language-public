@@ -4,12 +4,15 @@
     {
       "type": "value",
       "t": "symbol",
-      "value": "s"
+      "value": "s",
+      "line": 3
     },
     {
       "type": "value",
       "t": "string",
-      "value": "a text"
+      "value": "a text",
+      "line": 4
     }
-  ]
+  ],
+  "line": 5
 }

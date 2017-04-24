@@ -4,12 +4,15 @@
     {
       "type": "value",
       "t": "int",
-      "value": 758234
+      "value": 758234,
+      "line": 3
     },
     {
       "type": "value",
       "t": "logic",
-      "value": false
+      "value": false,
+      "line": 4
     }
-  ]
+  ],
+  "line": 5
 }

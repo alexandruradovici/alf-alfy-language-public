@@ -10,10 +10,13 @@
           "value": {
             "type": "value",
             "t": "int",
-            "value": 0
-          }
+            "value": 0,
+            "line": 3
+          },
+          "line": 3
         }
-      ]
+      ],
+      "line": 3
     },
     {
       "type": "repeat",
@@ -22,36 +25,46 @@
         "op": "<",
         "left": {
           "type": "id",
-          "value": "n"
+          "value": "n",
+          "line": 7
         },
         "right": {
           "type": "value",
           "t": "int",
-          "value": 100
-        }
+          "value": 100,
+          "line": 7
+        },
+        "line": 7
       },
       "statements": [
         {
           "type": "attribution",
           "to": {
             "type": "id",
-            "value": "n"
+            "value": "n",
+            "line": 6
           },
           "from": {
             "type": "expression",
             "op": "+",
             "left": {
               "type": "id",
-              "value": "n"
+              "value": "n",
+              "line": 6
             },
             "right": {
               "type": "value",
               "t": "int",
-              "value": 1
-            }
-          }
+              "value": 1,
+              "line": 6
+            },
+            "line": 6
+          },
+          "line": 6
         }
-      ]
+      ],
+      "line": 7
     }
-  ]
+  ],
+  "line": 7
 }

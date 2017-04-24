@@ -2,7 +2,9 @@
   "type": "script",
   "statements": [
     {
-      "type": "empty"
+      "type": "empty",
+      "line": 1
     }
-  ]
+  ],
+  "line": 1
 }

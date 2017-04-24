@@ -7,11 +7,13 @@
       "parameters": [
         {
           "id": "n1",
-          "type": "int"
+          "type": "int",
+          "line": 4
         },
         {
           "id": "n2",
-          "type": "int"
+          "type": "int",
+          "line": 5
         }
       ],
       "value_type": "int",
@@ -27,24 +29,33 @@
                 "op": "+",
                 "left": {
                   "type": "id",
-                  "value": "n1"
+                  "value": "n1",
+                  "line": 8
                 },
                 "right": {
                   "type": "id",
-                  "value": "n2"
-                }
-              }
+                  "value": "n2",
+                  "line": 8
+                },
+                "line": 8
+              },
+              "line": 8
             }
-          ]
+          ],
+          "line": 8
         },
         {
           "type": "value_of_function",
           "value": {
             "type": "id",
-            "value": "s"
-          }
+            "value": "s",
+            "line": 9
+          },
+          "line": 9
         }
-      ]
+      ],
+      "line": 10
     }
-  ]
+  ],
+  "line": 12
 }

@@ -4,7 +4,9 @@
     {
       "type": "struct",
       "id": "product",
-      "elements": []
+      "elements": [],
+      "line": 3
     }
-  ]
+  ],
+  "line": 3
 }

@@ -4,7 +4,9 @@
     {
       "type": "value",
       "t": "logic",
-      "value": false
+      "value": false,
+      "line": 1
     }
-  ]
+  ],
+  "line": 1
 }

@@ -7,17 +7,22 @@
       "elements": [
         {
           "id": "type",
-          "type": "int"
+          "type": "int",
+          "line": 5
         },
         {
           "id": "private",
-          "type": "logic"
+          "type": "logic",
+          "line": 4
         },
         {
           "id": "name",
-          "type": "string"
+          "type": "string",
+          "line": 3
         }
-      ]
+      ],
+      "line": 6
     }
-  ]
+  ],
+  "line": 6
 }

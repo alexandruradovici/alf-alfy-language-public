@@ -14,15 +14,19 @@
           "left": {
             "type": "value",
             "t": "string",
-            "value": "Print text "
+            "value": "Print text ",
+            "line": 6
           },
           "right": {
             "type": "value",
             "t": "int",
-            "value": 1
-          }
+            "value": 1,
+            "line": 6
+          },
+          "line": 6
         }
-      }
+      },
+      "line": 6
     },
     {
       "type": "valueof",
@@ -37,14 +41,19 @@
           "left": {
             "type": "value",
             "t": "string",
-            "value": "Print text "
+            "value": "Print text ",
+            "line": 16
           },
           "right": {
             "type": "id",
-            "value": "P"
-          }
+            "value": "P",
+            "line": 16
+          },
+          "line": 16
         }
-      }
+      },
+      "line": 16
     }
-  ]
+  ],
+  "line": 18
 }

@@ -16,22 +16,29 @@
             "op": "/",
             "left": {
               "type": "value",
-              "t": "float",
-              "value": 3.14
+              "t": "real",
+              "value": 3.14,
+              "line": 5
             },
             "right": {
               "type": "value",
               "t": "int",
-              "value": 2
-            }
+              "value": 2,
+              "line": 5
+            },
+            "line": 5
           },
           "right": {
             "type": "value",
             "t": "string",
-            "value": " is PI/2"
-          }
+            "value": " is PI/2",
+            "line": 5
+          },
+          "line": 5
         }
-      }
+      },
+      "line": 5
     }
-  ]
+  ],
+  "line": 6
 }

@@ -4,7 +4,9 @@
     {
       "type": "value",
       "t": "symbol",
-      "value": "\""
+      "value": "\"",
+      "line": 3
     }
-  ]
+  ],
+  "line": 3
 }

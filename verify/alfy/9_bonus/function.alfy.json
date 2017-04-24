@@ -11,9 +11,12 @@
         "text": {
           "type": "value",
           "t": "string",
-          "value": "Text"
+          "value": "Text",
+          "line": 5
         }
-      }
+      },
+      "line": 5
     }
-  ]
+  ],
+  "line": 6
 }

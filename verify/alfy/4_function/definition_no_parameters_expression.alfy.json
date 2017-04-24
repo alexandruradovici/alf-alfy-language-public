@@ -10,9 +10,12 @@
         {
           "type": "value",
           "t": "string",
-          "value": "say"
+          "value": "say",
+          "line": 3
         }
-      ]
+      ],
+      "line": 3
     }
-  ]
+  ],
+  "line": 3
 }

@@ -18,9 +18,11 @@
             "a": {
               "type": "value",
               "t": "int",
-              "value": 47821
+              "value": 47821,
+              "line": 3
             }
-          }
+          },
+          "line": 3
         },
         "text": {
           "type": "expression",
@@ -37,33 +39,44 @@
                 "left": {
                   "type": "value",
                   "t": "string",
-                  "value": "text"
+                  "value": "text",
+                  "line": 3
                 },
                 "right": {
                   "type": "value",
                   "t": "symbol",
-                  "value": " "
-                }
+                  "value": " ",
+                  "line": 3
+                },
+                "line": 3
               },
               "right": {
                 "type": "value",
                 "t": "string",
-                "value": "to"
-              }
+                "value": "to",
+                "line": 3
+              },
+              "line": 3
             },
             "right": {
               "type": "value",
               "t": "symbol",
-              "value": " "
-            }
+              "value": " ",
+              "line": 3
+            },
+            "line": 3
           },
           "right": {
             "type": "value",
             "t": "string",
-            "value": "write"
-          }
+            "value": "write",
+            "line": 3
+          },
+          "line": 3
         }
-      }
+      },
+      "line": 3
     }
-  ]
+  ],
+  "line": 3
 }

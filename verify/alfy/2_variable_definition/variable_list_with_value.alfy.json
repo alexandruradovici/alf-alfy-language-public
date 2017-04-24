@@ -10,17 +10,21 @@
           "value": {
             "type": "value",
             "t": "int",
-            "value": 3
-          }
+            "value": 3,
+            "line": 2
+          },
+          "line": 2
         },
         {
           "id": "r",
           "type": "real",
           "value": {
             "type": "value",
-            "t": "float",
-            "value": 3.7
-          }
+            "t": "real",
+            "value": 3.7,
+            "line": 3
+          },
+          "line": 3
         },
         {
           "id": "l",
@@ -28,8 +32,10 @@
           "value": {
             "type": "value",
             "t": "logic",
-            "value": false
-          }
+            "value": false,
+            "line": 4
+          },
+          "line": 4
         },
         {
           "id": "s",
@@ -37,10 +43,14 @@
           "value": {
             "type": "value",
             "t": "string",
-            "value": "string"
-          }
+            "value": "string",
+            "line": 5
+          },
+          "line": 5
         }
-      ]
+      ],
+      "line": 5
     }
-  ]
+  ],
+  "line": 5
 }

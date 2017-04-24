@@ -7,11 +7,13 @@
       "parameters": [
         {
           "id": "a",
-          "type": "int"
+          "type": "int",
+          "line": 3
         },
         {
           "id": "n",
-          "type": "int"
+          "type": "int",
+          "line": 4
         }
       ],
       "value_type": "int",
@@ -25,10 +27,13 @@
               "value": {
                 "type": "value",
                 "t": "int",
-                "value": 1
-              }
+                "value": 1,
+                "line": 7
+              },
+              "line": 7
             }
-          ]
+          ],
+          "line": 7
         },
         {
           "type": "for",
@@ -36,47 +41,60 @@
           "from": {
             "type": "value",
             "t": "int",
-            "value": 1
+            "value": 1,
+            "line": 8
           },
+          "direction": "to",
           "to": {
             "type": "id",
-            "value": "n"
+            "value": "n",
+            "line": 8
           },
           "step": {
             "type": "value",
             "t": "int",
-            "value": 1
+            "value": 1,
+            "line": 8
           },
           "statements": [
             {
               "type": "attribution",
               "to": {
                 "type": "id",
-                "value": "p"
+                "value": "p",
+                "line": 9
               },
               "from": {
                 "type": "expression",
                 "op": "*",
                 "left": {
                   "type": "id",
-                  "value": "p"
+                  "value": "p",
+                  "line": 9
                 },
                 "right": {
                   "type": "id",
-                  "value": "a"
-                }
-              }
+                  "value": "a",
+                  "line": 9
+                },
+                "line": 9
+              },
+              "line": 9
             }
-          ]
+          ],
+          "line": 10
         },
         {
           "type": "value_of_function",
           "value": {
             "type": "id",
-            "value": "a"
-          }
+            "value": "a",
+            "line": 11
+          },
+          "line": 11
         }
-      ]
+      ],
+      "line": 12
     },
     {
       "type": "define",
@@ -87,16 +105,20 @@
           "value": {
             "type": "value",
             "t": "int",
-            "value": 0
-          }
+            "value": 0,
+            "line": 14
+          },
+          "line": 14
         }
-      ]
+      ],
+      "line": 14
     },
     {
       "type": "attribution",
       "to": {
         "type": "id",
-        "value": "n"
+        "value": "n",
+        "line": 16
       },
       "from": {
         "type": "valueof",
@@ -108,15 +130,20 @@
           "n": {
             "type": "value",
             "t": "int",
-            "value": 5
+            "value": 5,
+            "line": 16
           },
           "a": {
             "type": "value",
             "t": "int",
-            "value": 6
+            "value": 6,
+            "line": 16
           }
-        }
-      }
+        },
+        "line": 16
+      },
+      "line": 16
     }
-  ]
+  ],
+  "line": 19
 }

@@ -6,9 +6,12 @@
       "elements": [
         {
           "id": "variable",
-          "type": "int"
+          "type": "int",
+          "line": 2
         }
-      ]
+      ],
+      "line": 2
     }
-  ]
+  ],
+  "line": 2
 }

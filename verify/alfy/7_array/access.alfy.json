@@ -1,41 +1,9 @@
 {
-  "type": "script",
-  "statements": [
-    {
-      "type": "array",
-      "id": "list",
-      "elements_type": "string",
-      "from": 1,
-      "to": 9
-    },
-    {
-      "type": "define",
-      "elements": [
-        {
-          "id": "v",
-          "type": "list"
-        }
-      ]
-    },
-    {
-      "type": "attribution",
-      "to": {
-        "type": "element_of_array",
-        "array": {
-          "type": "id",
-          "value": "v"
-        },
-        "index": {
-          "type": "value",
-          "t": "int",
-          "value": 5
-        }
-      },
-      "from": {
-        "type": "value",
-        "t": "string",
-        "value": "The new name for the school"
-      }
-    }
+  "error": "syntax",
+  "line": 2,
+  "text": "to",
+  "token": "DIRECTION",
+  "expected": [
+    "'TO'"
   ]
 }

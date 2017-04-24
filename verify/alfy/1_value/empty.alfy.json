@@ -3,7 +3,9 @@
   "statements": [
     {
       "type": "value",
-      "op": "empty"
+      "op": "empty",
+      "line": 1
     }
-  ]
+  ],
+  "line": 1
 }

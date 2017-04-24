@@ -1,63 +1,9 @@
 {
-  "type": "script",
-  "statements": [
-    {
-      "type": "struct",
-      "id": "school",
-      "elements": [
-        {
-          "id": "type",
-          "type": "int"
-        },
-        {
-          "id": "private",
-          "type": "logic"
-        },
-        {
-          "id": "name",
-          "type": "string"
-        }
-      ]
-    },
-    {
-      "type": "array",
-      "id": "list",
-      "elements_type": "school",
-      "from": 1,
-      "to": 9
-    },
-    {
-      "type": "define",
-      "elements": [
-        {
-          "id": "list_of_schools",
-          "type": "list"
-        }
-      ]
-    },
-    {
-      "type": "attribution",
-      "to": {
-        "type": "element_of_struct",
-        "struct": {
-          "type": "element_of_array",
-          "array": {
-            "type": "id",
-            "value": "list_of_schools"
-          },
-          "index": {
-            "type": "value",
-            "t": "int",
-            "value": 1
-          }
-        },
-        "element": "name"
-      },
-      "from": {
-        "type": "value",
-        "t": "string",
-        "value": "School"
-      }
-    }
+  "error": "syntax",
+  "line": 8,
+  "text": "to",
+  "token": "DIRECTION",
+  "expected": [
+    "'TO'"
   ]
 }

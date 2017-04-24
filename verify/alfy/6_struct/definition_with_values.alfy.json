@@ -11,8 +11,10 @@
           "value": {
             "type": "value",
             "t": "int",
-            "value": 0
-          }
+            "value": 0,
+            "line": 5
+          },
+          "line": 5
         },
         {
           "id": "private",
@@ -20,8 +22,10 @@
           "value": {
             "type": "value",
             "t": "logic",
-            "value": false
-          }
+            "value": false,
+            "line": 4
+          },
+          "line": 4
         },
         {
           "id": "name",
@@ -29,10 +33,14 @@
           "value": {
             "type": "value",
             "t": "string",
-            "value": "Public Elementary School"
-          }
+            "value": "Public Elementary School",
+            "line": 3
+          },
+          "line": 3
         }
-      ]
+      ],
+      "line": 6
     }
-  ]
+  ],
+  "line": 7
 }
