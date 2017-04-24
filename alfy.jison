@@ -79,7 +79,7 @@ false 							return 'FALSE';
 %left AND 
 %left OR XOR
 %left '=' '!='
-$left INEQUALITY
+%left INEQUALITY
 %right NOT
 %left '+' '-'
 %left '*' '/' MOD
