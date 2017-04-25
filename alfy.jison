@@ -20,7 +20,8 @@ is 								return 'IS';
 for 							return 'FOR';
 run 							return 'RUN';
 from 							return 'FROM';
-(to)|(downto) 					return 'DIRECTION';
+to 								return 'TO';
+downto		 					return 'DOWNTO';
 of 								return 'OF';
 element 						return 'ELEMENT';
 step 							return 'STEP';
@@ -235,7 +236,7 @@ run_parameters_list:		IDENTIFIER IS expression run_parameters_list
 											$$[$1] = $3;
 										};
 
-for:	FOR IDENTIFIER FROM expression DIRECTION expression STEP expression RUN statements END
+for:	FOR IDENTIFIER FROM expression direction expression STEP expression RUN statements END
 				{
 					$$ = {
 						type: 'for',
@@ -248,6 +249,9 @@ for:	FOR IDENTIFIER FROM expression DIRECTION expression STEP expression RUN sta
 					 	line: yylineno+1
 					};
 				};
+
+direction:   TO 
+			| DOWNTO;
 
 while:	WHILE expression RUN statements END
 				{
@@ -512,7 +516,7 @@ expression:		expression '+' expression
 							$$ = {
 								type: 'expression',
 								op: 'not',
-								value: $3,
+								value: $2,
 								line: yylineno+1
 							};
 						} 
@@ -521,7 +525,7 @@ expression:		expression '+' expression
 						{
 							$$ = {
 								type: 'expression',
-								op: 'negative',
+								op: '-',
 								value: $2,
 								line: yylineno+1
 							};
