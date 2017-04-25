@@ -329,7 +329,7 @@ struct_elements:	variable_definition ',' struct_elements
 											// console.log ($3);
 											$1.elements.forEach (function (element)
 											{
-												$3.push (element);
+												$3.splice (0, 0, element);
 											});
 											$$ = $3;
 										}
